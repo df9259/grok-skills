@@ -1,0 +1,2 @@
+# <type>[optional scope]: <description>
+[full]
