@@ -1,0 +1,29 @@
+name: Validate Grok Skills
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '**/SKILL.md'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - '**/SKILL.md'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate Skills
+        run: |
+          chmod +x .github/scripts/validate-skill.sh
+          echo "Validating all skills in repository..."
+          find . -name SKILL.md -type f | while read -r skill_md; do
+            skill_dir=$(dirname "$skill_md")
+            echo "→ Validating $skill_dir"
+            .github/scripts/validate-skill.sh "$skill_dir" || exit 1
+          done
+          echo "✅ All skills passed validation!"
