@@ -1,3 +1,0 @@
-# Python .gitignore Recommendations
-
-[full]

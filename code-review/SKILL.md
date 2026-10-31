@@ -1,6 +1,6 @@
 ---
 name: code-review
-description: Use when the user asks to review code, analyze code, find bugs, check for security issues, improve code quality, or get feedback on implementation. Trigger words include review, analyze, audit, critique, refactor suggestions.
+description: Use when reviewing code for bugs, security issues, performance or maintainability, with Rust and Kotlin/Android checklists.
 ---
 
 # Code Review Skill
@@ -60,6 +60,14 @@ Quick checklist:
 - Ownership/borrowing issues
 - Suggest running `clippy -- -D warnings`
 
+### Kotlin / Android quick checklist
+- `!!` on values that can be null; prefer safe calls or early returns
+- Coroutines: work on the main thread, `GlobalScope`, missing cancellation, collecting flows outside lifecycle scope
+- Leaking `Activity`/`Context` into long-lived objects or ViewModels
+- Runtime permissions and background location/foreground-service rules for the target SDK
+- Secrets in `BuildConfig`, resources or logs
+- Suggest running `./gradlew lint` and the unit tests
+
 For other languages, apply general best practices + language idioms.
 
 ## Output Format
@@ -111,3 +119,5 @@ For each issue:
 - **Performance-critical paths** → Deep dive into efficiency
 
 Always ask yourself: "Would I be comfortable shipping this code?"
+
+Source: adapted from the owner's grok-skills repo (code-review).

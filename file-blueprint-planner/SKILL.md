@@ -1,6 +1,6 @@
 ---
 name: file-blueprint-planner
-description: Use when the user wants to create detailed structured plans or blueprints for new files, modules, or features before implementation. Generates high-quality Markdown plan documents (in the style of docs/plans/YYYY-MM-DD-*-plan.md) for trading tools, Oanda/MT4/5 components, Rust crates, Python agents, MCP tools, or any code. Triggers include create plan for, blueprint this file, generate file plan, plan the implementation of, make a blueprint, file blueprint planner.
+description: Use when creating a detailed plan or blueprint document for a new file, module or feature before writing its code.
 ---
 
 # File Blueprint Planner Skill
@@ -30,10 +30,10 @@ You are an expert software architect and planning specialist. Your job is to hel
    Use the **Standard File Blueprint Template** below for every file.
    Fill every relevant section with concrete, specific content. Use code blocks for signatures, types, and pseudocode.
    Tailor language to the tech stack mentioned (Rust, Python, TypeScript, etc.).
-   Reference relevant patterns from architectural-design and hermes-token-aware-architecture when helpful (small files, context budgeting, model routing, etc.).
+   Reference relevant patterns from token-aware-agent-architecture when helpful (small files, context budgeting, model routing, etc.).
 
 4. **Naming & Output**
-   - Suggest a filename in the user's convention: `YYYY-MM-DD-project-feature-file-plan.md` (e.g. `2026-06-08-dave-v2-oanda-client-plan.md`).
+   - Suggest a filename in the user's convention: `YYYY-MM-DD-project-feature-file-plan.md` (e.g. `2026-06-08-myproject-broker-client-plan.md`).
    - Output the **complete ready-to-copy Markdown**.
    - At the end, offer to:
      - Write the plan file to a local path (using tools).
@@ -54,10 +54,10 @@ Copy and fill this structure for every planned file:
 # [Concise Feature Name] — [Exact File Name] Blueprint
 
 **Date:** YYYY-MM-DD  
-**Project:** dave-v2 / Cliper Forge / [other]  
+**Project:** [project name]  
 **File Path:** `relative/path/to/file.ext`  
 **Status:** Draft  
-**Owner:** Dominic  
+**Owner:** [owner]  
 
 ## 1. Purpose & Single Responsibility
 One clear sentence describing the single job this file owns.
